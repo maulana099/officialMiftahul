@@ -15,6 +15,9 @@
 //     return view('welcome');
 // });
 
+// swit
+
+
 // -----------admin
 Route::get('/login','AdminController@login')->name('login');
 Route::post('/loginpost','AdminController@loginPost');
@@ -63,11 +66,21 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::post('/data-pendaftaran/update/status/{id}','DataController@update_status');
 });
 // -----------user
+// Route::get('/','DashboardController@dashboard');
+// Route::get('/tentang-kami','DashboardController@tentang');
+// Route::get('/visi-misi','DashboardController@visi_misi');
+// Route::get('/pendaftaran','DashboardController@pendaftaran');
+// Route::post('/formulir/pendaftaran/','DashboardController@post_daftar');
+// Route::get('/details/berita/{id}','DashboardController@berita');
+// Route::post('/kirim/message','DashboardController@message');
+// Route::get('/hasil/pendaftaran','DashboardController@hasil');
+
 Route::get('/','DashboardController@dashboard');
-Route::get('/tentang-kami','DashboardController@tentang');
+Route::get('/tentang','DashboardController@tentang');
 Route::get('/visi-misi','DashboardController@visi_misi');
-Route::get('/pendaftaran','DashboardController@pendaftaran');
-Route::post('/formulir/pendaftaran/','DashboardController@post_daftar');
-Route::get('/details/berita/{id}','DashboardController@berita');
-Route::post('/kirim/message','DashboardController@message');
-Route::get('/hasil/pendaftaran','DashboardController@hasil');
+
+Route::get('/psb','PsbController@index');
+Route::get('/psb/biaya-pendidikan','PsbController@pembayaran');
+Route::get('/psb/syarat','PsbController@syarat');
+Route::get('/psb/alur-pendaftaran','PsbController@caraPendaftaran');
+
